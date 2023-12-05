@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% extends 'Linkapp/navbar.html' %}
+{% block content  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLinkr | Login</title>
+    <style>
+        .form-container {
+            width: 400px;
+            background: linear-gradient(#dfe9e8,#7a7a76 ) padding-box,
+                        linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+            border: 2px solid transparent;
+            padding: 32px 24px;
+            font-size: 14px;
+            font-family: inherit;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin-top:150px;
+            margin-left:450px;
+          }
+
+          input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #555;
+            outline: none;
+            margin-bottom: 20px;
+          }
+          
+          input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          }
+          label{
+            color:black;
+            font-size: larger;
+            font-weight: 600;
+            margin-right: 20px;
+          }
+    </style>
+</head>
+<body>
+   
+  
+  
+    <div class="form-container">
+    <div class="col-md-5 mt-4">
+
+        <form action="" method="post" class="bordered">
+            {% csrf_token %}
+            <table>
+                {% for x in logform %}
+                <tr>
+                    <td> {{x.label_tag}} </td>
+                    <td> {{x}} </td>
+                    <td> {{x.errors}}</td>
+                   
+                </tr>
+                {% endfor %}
+                <tr> <span class="text-danger">{{msg}}</span></tr>
+                <tr>
+                    <td>
+                    <input type="submit" class="btn btn-primary" value="Login">
+                    </td>
+                   
+                   
+
+                </tr>
+            </table>
+        </form>
+      
+            <span> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="/register"><button class="btn btn-danger text-white">Signup</button> </a></span>
+           
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

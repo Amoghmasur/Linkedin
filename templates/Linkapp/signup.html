@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'Linkapp/navbar.html' %}
+{% block content  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong>{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+    <span><a href="/login"><button class="btn btn-danger text-white">Signin</button> </a></span>
+  </h3>
+  <div class="container">
+    <div class="col-md-5 mt-5">
+
+        <form action="" method="post" class="bordered">
+            {% csrf_token %}
+            <table>
+                {% for x in regform %}
+                <tr>
+                    <td> {{x.label_tag}} </td>
+                    <td> {{x}} </td>
+                    <td> {{x.errors}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>
+                    <input type="submit" class="btn btn-primary" value="Signup">
+                    </td>
+                </tr>
+
+
+            </table>
+
+        </form>
+    </div>
+
+  </div>
+</body>
+</html>
+{% endblock %}
