@@ -30,8 +30,3 @@ class EmployeeDetail1(models.Model):
 
 
 
-
-
-
-    
-

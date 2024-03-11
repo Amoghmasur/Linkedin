@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'slinkrdb',
         'HOST': 'localhost',
         'USER':'root',
-        'PASSWORD':'root',
+        'PASSWORD':'amogh',
         'PORT':'3306',
     }
 }
